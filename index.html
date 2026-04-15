@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>日本自由行行程規劃</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f5f5f7;
+    color: #1d1d1f;
+    line-height: 1.7;
+  }
+  header {
+    background: linear-gradient(135deg, #c2185b 0%, #e91e63 100%);
+    color: #fff;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  header h1 { margin: 0 0 0.5rem; font-size: 1.75rem; }
+  header p { margin: 0; opacity: 0.9; font-size: 0.95rem; }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.5rem;
+  }
+
+  .selector {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .selector-row {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+  }
+  .selector-row:last-child { margin-bottom: 0; }
+  .selector-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    width: 100%;
+  }
+  .btn {
+    flex: 1;
+    min-width: 120px;
+    padding: 0.65rem 1rem;
+    border: 2px solid #e0e0e0;
+    background: #fff;
+    color: #555;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn:hover { border-color: #e91e63; color: #e91e63; }
+  .btn.active {
+    background: #e91e63;
+    border-color: #e91e63;
+    color: #fff;
+  }
+
+  .content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    min-height: 400px;
+  }
+  .content.loading { text-align: center; color: #999; padding: 3rem 1rem; }
+
+  /* Markdown content styling */
+  .content h1 {
+    color: #c2185b;
+    border-bottom: 3px solid #e91e63;
+    padding-bottom: 0.5rem;
+    font-size: 1.75rem;
+    margin-top: 0;
+  }
+  .content h2 {
+    color: #1d1d1f;
+    border-left: 5px solid #e91e63;
+    padding-left: 0.75rem;
+    margin-top: 2.5rem;
+    font-size: 1.4rem;
+  }
+  .content h3 {
+    color: #444;
+    margin-top: 1.75rem;
+    font-size: 1.15rem;
+  }
+  .content h4 {
+    color: #555;
+    margin-top: 1.25rem;
+    font-size: 1.02rem;
+  }
+  .content table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+    overflow-x: auto;
+    display: block;
+  }
+  @media (min-width: 720px) {
+    .content table { display: table; }
+  }
+  .content th, .content td {
+    border: 1px solid #e0e0e0;
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  .content th {
+    background: #fce4ec;
+    font-weight: 600;
+    color: #c2185b;
+  }
+  .content tr:nth-child(even) td { background: #fafafa; }
+  .content blockquote {
+    border-left: 4px solid #ffc107;
+    background: #fff8e1;
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    color: #5d4037;
+  }
+  .content code {
+    background: #f0f0f0;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+  .content a { color: #1976d2; }
+  .content hr {
+    border: none;
+    border-top: 2px dashed #e0e0e0;
+    margin: 2rem 0;
+  }
+  .content ul, .content ol { padding-left: 1.5rem; }
+  .content li { margin: 0.25rem 0; }
+  .content strong { color: #c2185b; }
+
+  footer {
+    text-align: center;
+    color: #888;
+    padding: 2rem 1rem 3rem;
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 600px) {
+    header h1 { font-size: 1.35rem; }
+    .container { padding: 0.75rem; }
+    .content { padding: 1.25rem; }
+    .content h1 { font-size: 1.4rem; }
+    .content h2 { font-size: 1.2rem; }
+    .btn { font-size: 0.88rem; padding: 0.55rem 0.75rem; }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>🗾 日本自由行行程規劃</h1>
+    <p>名古屋 → 京都 → 大阪・六天五夜</p>
+  </header>
+
+  <div class="container">
+    <div class="selector">
+      <span class="selector-label">選擇版本</span>
+      <div class="selector-row" id="version-row">
+        <button class="btn active" data-version="june_4p">🌿 6 月・4 人團</button>
+        <button class="btn" data-version="oct_5p">🍂 10 月・5 人團</button>
+      </div>
+      <span class="selector-label">選擇內容</span>
+      <div class="selector-row" id="doc-row">
+        <button class="btn active" data-doc="itinerary">📅 每日行程</button>
+        <button class="btn" data-doc="tips">🧳 準備資訊</button>
+      </div>
+    </div>
+
+    <div class="content loading" id="content">載入中...</div>
+  </div>
+
+  <footer>
+    <p>🗓️ 資料內容參考截止 2025 年 5 月・實際票價／時間請出發前再次確認</p>
+  </footer>
+
+<script>
+  const FILES = {
+    june_4p: {
+      itinerary: 'japan_itinerary_june_4p.md',
+      tips: 'travel_tips_june_4p.md'
+    },
+    oct_5p: {
+      itinerary: 'japan_itinerary_oct_5p.md',
+      tips: 'travel_tips_oct_5p.md'
+    }
+  };
+
+  let currentVersion = 'june_4p';
+  let currentDoc = 'itinerary';
+
+  const contentEl = document.getElementById('content');
+
+  async function loadContent() {
+    const path = FILES[currentVersion][currentDoc];
+    contentEl.className = 'content loading';
+    contentEl.textContent = '載入中...';
+    try {
+      const res = await fetch(path + '?t=' + Date.now());
+      if (!res.ok) throw new Error('讀取失敗: ' + res.status);
+      const md = await res.text();
+      contentEl.className = 'content';
+      contentEl.innerHTML = marked.parse(md);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (err) {
+      contentEl.className = 'content';
+      contentEl.innerHTML = '<h2>❌ 載入失敗</h2><p>' + err.message + '</p><p>請確認 <code>' + path + '</code> 檔案存在。</p>';
+    }
+  }
+
+  function bindButtons(rowId, key, setter) {
+    document.getElementById(rowId).addEventListener('click', (e) => {
+      const btn = e.target.closest('button');
+      if (!btn) return;
+      document.querySelectorAll('#' + rowId + ' .btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      setter(btn.dataset[key]);
+      loadContent();
+    });
+  }
+
+  bindButtons('version-row', 'version', (v) => currentVersion = v);
+  bindButtons('doc-row', 'doc', (d) => currentDoc = d);
+
+  loadContent();
+</script>
+</body>
+</html>
