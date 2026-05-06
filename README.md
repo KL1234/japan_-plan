@@ -1,16 +1,18 @@
 # 日本自由行行程規劃
 
-名古屋 → 京都 → 大阪 六天五夜，兩個版本（6 月 4 人 / 10 月 5 人）。
+兩個版本：
+- **6 月 1 人 solo・北海道**（5 天 4 夜，札幌・小樽・登別溫泉，海鮮＋成吉思汗＋1 泊 2 食溫泉旅館）
+- **10 月 5 人團・本州**（6 天 5 夜，名古屋 → 奈良 → 大阪）
 
 ## 📁 檔案結構
 
 ```
 .
-├── index.html                    # 主網頁（家人瀏覽用）
-├── japan_itinerary_june_4p.md    # 6 月 4 人團・每日行程
-├── travel_tips_june_4p.md        # 6 月 4 人團・準備資訊
-├── japan_itinerary_oct_5p.md     # 10 月 5 人團・每日行程
-└── travel_tips_oct_5p.md         # 10 月 5 人團・準備資訊
+├── index.html                       # 主網頁（家人瀏覽用，含版本切換器）
+├── japan_itinerary_june_solo.md     # 6 月 1 人 solo・每日行程
+├── travel_tips_june_solo.md         # 6 月 1 人 solo・準備資訊
+├── japan_itinerary_oct_5p.md        # 10 月 5 人團・每日行程
+└── travel_tips_oct_5p.md            # 10 月 5 人團・準備資訊
 ```
 
 ## 🌐 部署到 GitHub Pages
