@@ -180,13 +180,14 @@
 <body>
   <header>
     <h1>🗾 日本自由行行程規劃</h1>
-    <p>6 月 1 人 solo（北海道：札幌・小樽・登別）／ 10 月 5 人團（名古屋 → 奈良 → 大阪）</p>
+    <p>6 月 1 人 solo・北海道（札幌・小樽・登別）</p>
   </header>
 
   <div class="container">
     <div class="selector">
-      <span class="selector-label">選擇版本</span>
-      <div class="selector-row" id="version-row">
+      <!-- 暫時隱藏版本切換器（10 月行程暫不顯示）；要還原把下方 style="display:none" 拿掉即可 -->
+      <span class="selector-label" style="display:none">選擇版本</span>
+      <div class="selector-row" id="version-row" style="display:none">
         <button class="btn active" data-version="june_solo">🌸 6 月・1 人北海道</button>
         <button class="btn" data-version="oct_5p">🍂 10 月・5 人團</button>
       </div>
@@ -194,6 +195,8 @@
       <div class="selector-row" id="doc-row">
         <button class="btn active" data-doc="itinerary">📅 每日行程</button>
         <button class="btn" data-doc="tips">🧳 準備資訊</button>
+        <button class="btn" data-doc="packing" id="btn-packing">📦 行前清單</button>
+        <button class="btn" data-doc="typhoon" id="btn-typhoon">🌀 颱風應變</button>
       </div>
     </div>
 
@@ -208,7 +211,9 @@
   const FILES = {
     june_solo: {
       itinerary: 'japan_itinerary_june_solo.md',
-      tips: 'travel_tips_june_solo.md'
+      tips: 'travel_tips_june_solo.md',
+      packing: 'packing_list_june.md',
+      typhoon: 'typhoon_emergency_june.md'
     },
     oct_5p: {
       itinerary: 'japan_itinerary_oct_5p.md',
@@ -220,6 +225,22 @@
   let currentDoc = 'itinerary';
 
   const contentEl = document.getElementById('content');
+  const optionalDocs = ['packing', 'typhoon'];
+
+  function updateDocButtons() {
+    optionalDocs.forEach(doc => {
+      const btn = document.getElementById('btn-' + doc);
+      if (!btn) return;
+      const has = !!FILES[currentVersion][doc];
+      btn.style.display = has ? '' : 'none';
+      if (!has && currentDoc === doc) {
+        currentDoc = 'itinerary';
+        document.querySelectorAll('#doc-row .btn').forEach(b => {
+          b.classList.toggle('active', b.dataset.doc === 'itinerary');
+        });
+      }
+    });
+  }
 
   async function loadContent() {
     const path = FILES[currentVersion][currentDoc];
@@ -249,9 +270,10 @@
     });
   }
 
-  bindButtons('version-row', 'version', (v) => currentVersion = v);
+  bindButtons('version-row', 'version', (v) => { currentVersion = v; updateDocButtons(); });
   bindButtons('doc-row', 'doc', (d) => currentDoc = d);
 
+  updateDocButtons();
   loadContent();
 </script>
 </body>
