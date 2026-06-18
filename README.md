@@ -10,12 +10,12 @@
 .
 ├── index.html                       # 主網頁（家人瀏覽用，含版本切換器）
 ├── dev.bat                          # 本機預覽伺服器（雙擊即啟動 http://localhost:8765）
-├── japan_itinerary_june_solo.md     # 6 月 1 人 solo・每日行程
-├── travel_tips_june_solo.md         # 6 月 1 人 solo・準備資訊
-├── packing_list_june.md             # 6 月 1 人 solo・行前清單
-├── typhoon_emergency_june.md        # 6 月 1 人 solo・颱風應變 SOP
-├── japan_itinerary_oct_5p.md        # 10 月 5 人團・每日行程（網頁暫時隱藏）
-└── travel_tips_oct_5p.md            # 10 月 5 人團・準備資訊（網頁暫時隱藏）
+├── japan_itinerary_june_solo.md     # 6 月 1 人 solo・每日行程（行程已結束，網頁暫時隱藏）
+├── travel_tips_june_solo.md         # 6 月 1 人 solo・準備資訊（網頁暫時隱藏）
+├── packing_list_june.md             # 6 月 1 人 solo・行前清單（網頁暫時隱藏）
+├── typhoon_emergency_june.md        # 6 月 1 人 solo・颱風應變 SOP（網頁暫時隱藏）
+├── japan_itinerary_oct_5p.md        # 10 月 5 人團・每日行程（網頁目前顯示）
+└── travel_tips_oct_5p.md            # 10 月 5 人團・準備資訊（網頁目前顯示）
 ```
 
 ## 🖥️ 本機預覽
