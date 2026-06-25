@@ -195,6 +195,7 @@
       <div class="selector-row" id="doc-row">
         <button class="btn active" data-doc="itinerary">📅 每日行程</button>
         <button class="btn" data-doc="tips">🧳 準備資訊</button>
+        <button class="btn" data-doc="hotel" id="btn-hotel">🏨 住宿資訊</button>
         <button class="btn" data-doc="packing" id="btn-packing">📦 行前清單</button>
         <button class="btn" data-doc="typhoon" id="btn-typhoon">🌀 颱風應變</button>
       </div>
@@ -217,7 +218,8 @@
     },
     oct_5p: {
       itinerary: 'japan_itinerary_oct_5p.md',
-      tips: 'travel_tips_oct_5p.md'
+      tips: 'travel_tips_oct_5p.md',
+      hotel: 'hotel_info_oct.md'
     }
   };
 
@@ -225,7 +227,7 @@
   let currentDoc = 'itinerary';
 
   const contentEl = document.getElementById('content');
-  const optionalDocs = ['packing', 'typhoon'];
+  const optionalDocs = ['hotel', 'packing', 'typhoon'];
 
   function updateDocButtons() {
     optionalDocs.forEach(doc => {

@@ -15,7 +15,8 @@
 ├── packing_list_june.md             # 6 月 1 人 solo・行前清單（網頁暫時隱藏）
 ├── typhoon_emergency_june.md        # 6 月 1 人 solo・颱風應變 SOP（網頁暫時隱藏）
 ├── japan_itinerary_oct_5p.md        # 10 月 5 人團・每日行程（網頁目前顯示）
-└── travel_tips_oct_5p.md            # 10 月 5 人團・準備資訊（網頁目前顯示）
+├── travel_tips_oct_5p.md            # 10 月 5 人團・準備資訊（網頁目前顯示）
+└── hotel_info_oct.md                # 10 月 5 人團・住宿資訊（已訂・網頁目前顯示）
 ```
 
 ## 🖥️ 本機預覽
