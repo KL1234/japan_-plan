@@ -8,10 +8,7 @@
 ---
 
 ## ① 現在就能買／辦（不必等）
-- [ ] **南海 rapi:t 回程票 ×5**（Day6 難波→KIX）｜¥1,490/人
-  - 🔗 最省＝南海官網數位票 [ラピートデジタルきっぷ](https://www.nankai.co.jp/traffic/digital/rapit.html)（手機電子票、刷卡）；或 KKday／KLOOK 搜「rapi:t 關空特急」電子票
-  - 👉 選區間「なんば→関西空港」、Day6 出發時段、人數 5 → 刷卡付款 → 把 QR／憑證存到手機
-  - 📖 票種比較參考：[關空トク割 ラピートきっぷ](https://www.nankai.co.jp/traffic/otoku/kankutokuwari.html)
+> ✅ **Day6 難波→KIX 已改搭 OCAT 利木津巴士（¥1,400/人）＝免提前購票**：當天到 **OCAT 2 樓・9 號乘車處**、2 樓「空港便券売機」或日本交通窗口現場買（現金／IC／信用卡／QR 皆可），**免預約、先着順**、行李丟車底。座席定員制滿了等下一班（每 20–30 分），**提早到、抓早一班**。想更快的備案才需南海 rapi:t（¥1,490，南海なんば走 7 分，可官網數位票／KKday／KLOOK 先買）。
 - [ ] **形象照攝影棚**（Day4 早・芯/洋/傑）｜以黑門市場為集合點｜🙋 **芯負責**（選棚＋訂檔期）
 - [ ] **63angel：先追蹤 IG @burlesque_osaka ＋ 完成会員登録**（先準備，9/4 才能訂）
   - 🔗 會員註冊／訂位入口：[rokusanangel.jp/booking](https://rokusanangel.jp/booking/)
